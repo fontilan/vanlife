@@ -4,6 +4,17 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 
 function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+function Home() {
   return <h1>Hello World!</h1>;
 }
 
@@ -13,11 +24,6 @@ function About() {
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </BrowserRouter>
+    <App />
   </React.StrictMode>,
 );
