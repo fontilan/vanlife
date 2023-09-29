@@ -8,13 +8,17 @@ import './index.css';
 
 function App() {
   return (
-    <BrowserRouter>
-      {<Navbar />}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </BrowserRouter>
+    <main className="bg-orange-100 h-screen flex flex-col">
+      <BrowserRouter>
+        {<Navbar />}
+        <div className="flex flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </main>
   );
 }
 
