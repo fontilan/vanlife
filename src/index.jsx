@@ -1,27 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import About from './pages/about';
+import Home from './pages/home';
+import Navbar from './components/navbar';
 import './index.css';
 
 function App() {
   return (
     <BrowserRouter>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
+      {<Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
   );
-}
-
-function Home() {
-  return <h1>Hello World!</h1>;
-}
-
-function About() {
-  return <h1>About page goes here!</h1>;
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(
