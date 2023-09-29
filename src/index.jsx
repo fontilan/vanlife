@@ -9,7 +9,7 @@ import './index.css';
 
 function App() {
   return (
-    <main className="bg-orange-100 h-screen flex flex-col">
+    <main className="bg-orange-50 h-screen flex flex-col">
       <BrowserRouter>
         {<Navbar />}
         <div className="flex flex-grow">
