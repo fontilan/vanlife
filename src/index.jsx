@@ -1,15 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import About from './pages/about';
-import Footer from './components/footer';
-import Home from './pages/home';
-import Navbar from './components/navbar';
-import './index.css';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import About from './pages/about'
+import Footer from './components/footer'
+import Home from './pages/home'
+import Navbar from './components/navbar'
+import './index.css'
 
 function App() {
   return (
-    <main className="bg-orange-50 h-screen flex flex-col">
+    <main className="flex h-screen flex-col bg-orange-50">
       <BrowserRouter>
         {<Navbar />}
         <div className="flex flex-grow">
@@ -21,11 +21,11 @@ function App() {
         {<Footer />}
       </BrowserRouter>
     </main>
-  );
+  )
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-);
+)
