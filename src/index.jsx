@@ -5,7 +5,10 @@ import About from './pages/about'
 import Footer from './components/footer'
 import Home from './pages/home'
 import Navbar from './components/navbar'
+import Vans from './pages/vans'
 import './index.css'
+
+import './server'
 
 function App() {
   return (
@@ -16,6 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/vans" element={<Vans />} />
           </Routes>
         </div>
         {<Footer />}
