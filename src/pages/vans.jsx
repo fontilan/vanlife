@@ -22,13 +22,22 @@ function Vans() {
 
   if (vansData != null) {
     vansGrid = vansData.map((van) => (
-      <div key={van.id}>
-        <p>{van.name}</p>
+      <div className="p-4" key={van.id}>
+        <img className="rounded-md" src={van.imageUrl} />
+        <div className="mt-2 flex justify-between">
+          <p className="text-lg font-extrabold">{van.name}</p>
+          <p>${van.price}/day</p>
+        </div>
+        <button>{van.type}</button>
       </div>
     ))
   }
 
-  return <>{vansGrid}</>
+  return (
+    <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      {vansGrid}
+    </div>
+  )
 }
 
 export default Vans
