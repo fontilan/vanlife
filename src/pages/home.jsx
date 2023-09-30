@@ -12,7 +12,7 @@ function Home() {
           perfect van to make your perfect road trip.
         </p>
         <Link
-          className="mt-8 block rounded-md bg-orange-400 p-3 text-center font-semibold text-neutral-100 shadow-sm"
+          className="mt-8 block rounded-md bg-orange-400 p-3 text-center font-bold text-neutral-100 shadow-sm duration-100 ease-in-out hover:translate-x-1 hover:translate-y-1"
           to="/vans"
         >
           Find your van

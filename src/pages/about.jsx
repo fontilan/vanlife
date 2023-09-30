@@ -26,10 +26,10 @@ function About() {
         </p>
         <br />
         <div className="rounded-md bg-orange-200 p-6">
-          <p className="text-lg font-bold">Your destination is waiting.</p>
-          <p className="text-lg font-bold">Your van is ready.</p>
+          <p className="text-xl font-bold">Your destination is waiting.</p>
+          <p className="text-xl font-bold">Your van is ready.</p>
           <Link
-            className="mt-4 inline-block rounded-md bg-neutral-900 px-3 py-2 font-semibold text-neutral-50"
+            className="mt-4 inline-block rounded-md bg-neutral-900 px-3 py-2 font-semibold text-neutral-50 duration-100 ease-in-out hover:translate-x-1 hover:translate-y-1"
             to="/vans"
           >
             Explore our vans
