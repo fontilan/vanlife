@@ -10,7 +10,7 @@ function Vans() {
       .then((res) => res.json())
       .then((data) => {
         if (!ignore) {
-          setVansData(data)
+          setVansData(data.vans)
         }
       })
     return () => {
@@ -18,8 +18,17 @@ function Vans() {
     }
   }, [])
 
-  console.log(vansData)
-  return <p>Vans go here</p>
+  let vansGrid = []
+
+  if (vansData != null) {
+    vansGrid = vansData.map((van) => (
+      <div key={van.id}>
+        <p>{van.name}</p>
+      </div>
+    ))
+  }
+
+  return <>{vansGrid}</>
 }
 
 export default Vans
