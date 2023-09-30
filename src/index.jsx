@@ -2,13 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import About from './pages/about'
-import Footer from './components/footer'
 import Home from './pages/home'
-import Navbar from './components/navbar'
 import Vans from './pages/vans'
-import './index.css'
-
+import Footer from './components/footer'
+import Navbar from './components/navbar'
 import './server'
+import './index.css'
 
 function App() {
   return (
