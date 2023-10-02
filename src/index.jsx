@@ -11,7 +11,7 @@ import './index.css'
 
 function App() {
   return (
-    <main className="flex h-screen flex-col bg-orange-50">
+    <main className="flex min-h-screen flex-col bg-orange-50">
       <BrowserRouter>
         {<Navbar />}
         <div className="flex flex-grow">
