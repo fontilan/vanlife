@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-function vanDetails() {
+function VanDetails() {
   const params = useParams()
-  console.log(params.id)
 
   const [van, setVan] = useState(null)
 
@@ -48,4 +47,4 @@ function vanDetails() {
   }
 }
 
-export default vanDetails
+export default VanDetails
