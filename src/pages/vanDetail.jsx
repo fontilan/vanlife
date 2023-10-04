@@ -21,30 +21,30 @@ function VanDetails() {
     }
   }, [params.id])
 
-  if (van !== null) {
-    return (
-      <div className="mx-auto max-w-2xl px-4 py-12">
-        <img className="rounded-md" src={van.imageUrl} />
-        <button
-          className={
-            'mt-2 block rounded-md px-6 py-1 font-medium text-orange-50 ' +
-            (van.type === 'simple'
-              ? 'bg-orange-800'
-              : '' + van.type === 'rugged'
-              ? 'bg-emerald-800'
-              : '' + van.type === 'luxury'
-              ? 'bg-neutral-900'
-              : '')
-          }
-        >
-          {van.type}
-        </button>
-        <p className="text-lg font-extrabold">{van.name}</p>
-        <p>${van.price}/day</p>
-        <p>{van.description}</p>
-      </div>
-    )
-  }
+  return van ? (
+    <div className="mx-auto max-w-2xl px-4 py-12">
+      <img className="rounded-md" src={van.imageUrl} />
+      <button
+        className={
+          'mt-2 block rounded-md px-6 py-1 font-medium text-orange-50 ' +
+          (van.type === 'simple'
+            ? 'bg-orange-800'
+            : '' + van.type === 'rugged'
+            ? 'bg-emerald-800'
+            : '' + van.type === 'luxury'
+            ? 'bg-neutral-900'
+            : '')
+        }
+      >
+        {van.type}
+      </button>
+      <p className="text-lg font-extrabold">{van.name}</p>
+      <p>${van.price}/day</p>
+      <p>{van.description}</p>
+    </div>
+  ) : (
+    <h2>Loading</h2>
+  )
 }
 
 export default VanDetails
