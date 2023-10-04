@@ -43,7 +43,9 @@ function VanDetails() {
       <p>{van.description}</p>
     </div>
   ) : (
-    <h2>Loading</h2>
+    <p className="flex h-screen w-screen items-center justify-center text-2xl font-semibold">
+      Loading...
+    </p>
   )
 }
 
