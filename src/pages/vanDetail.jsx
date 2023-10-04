@@ -19,7 +19,7 @@ function VanDetails() {
     return () => {
       ignore = true
     }
-  }, [])
+  }, [params.id])
 
   if (van !== null) {
     return (
