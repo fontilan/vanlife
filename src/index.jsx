@@ -15,14 +15,12 @@ function App() {
     <main className="flex min-h-screen flex-col bg-orange-50">
       <BrowserRouter>
         {<Header />}
-        <div className="flex flex-grow">
-          <Routes>
+          <Routes className="flex flex-grow">
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/vans" element={<Vans />} />
             <Route path="/vans/:id" element={<VanDetail />} />
           </Routes>
-        </div>
         {<Footer />}
       </BrowserRouter>
     </main>
