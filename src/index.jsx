@@ -6,7 +6,7 @@ import Home from './pages/home'
 import Vans from './pages/vans'
 import VanDetail from './pages/vanDetail'
 import Footer from './components/footer'
-import Navbar from './components/navbar'
+import Header from './components/header'
 import './server'
 import './index.css'
 
@@ -14,7 +14,7 @@ function App() {
   return (
     <main className="flex min-h-screen flex-col bg-orange-50">
       <BrowserRouter>
-        {<Navbar />}
+        {<Header />}
         <div className="flex flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />

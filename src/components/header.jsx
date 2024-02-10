@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-function Navbar() {
+function Header() {
   return (
     <nav className="flex justify-between px-4 py-8">
       <div className=" text-lg font-extrabold">
@@ -18,4 +18,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default Header
