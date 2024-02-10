@@ -13,7 +13,7 @@ function App() {
   return (
     <main className="flex min-h-screen flex-col bg-orange-50">
       <BrowserRouter>
-        <Routes className="flex flex-grow">
+        <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
