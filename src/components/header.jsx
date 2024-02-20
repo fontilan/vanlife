@@ -7,6 +7,9 @@ function Header() {
         <Link to="/">#VANLIFE</Link>
       </div>
       <nav className="flex gap-4 font-medium text-stone-600">
+        <Link className="hover:text-stone-800 hover:underline" to="/host">
+          Host
+        </Link>
         <Link className="hover:text-stone-800 hover:underline" to="/about">
           About
         </Link>
