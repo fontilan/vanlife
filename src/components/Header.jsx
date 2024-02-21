@@ -1,21 +1,43 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 function Header() {
   return (
     <header className="flex justify-between px-4 py-8">
       <div className=" text-lg font-extrabold">
-        <Link to="/">#VANLIFE</Link>
+        <NavLink to="/">#VANLIFE</NavLink>
       </div>
+      {/* the NavLink component returns an object with a isActive property, a boolean which value depends on whether the route (to="/host" in the case below) is the current active route. We then use it to conditionally apply the styling. */}
       <nav className="flex gap-4 font-medium text-stone-600">
-        <Link className="hover:text-stone-800 hover:underline" to="/host">
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? 'font-bold text-stone-800 underline'
+              : 'hover:text-stone-700 hover:underline'
+          }
+          to="/host"
+        >
           Host
-        </Link>
-        <Link className="hover:text-stone-800 hover:underline" to="/about">
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? 'font-bold text-stone-800 underline'
+              : 'hover:text-stone-700 hover:underline'
+          }
+          to="/about"
+        >
           About
-        </Link>
-        <Link className="hover:text-stone-800 hover:underline" to="/vans">
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? 'font-bold text-stone-800 underline'
+              : 'hover:text-stone-700 hover:underline'
+          }
+          to="/vans"
+        >
           Vans
-        </Link>
+        </NavLink>
       </nav>
     </header>
   )
