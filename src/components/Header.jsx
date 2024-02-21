@@ -6,8 +6,8 @@ function Header() {
       <div className=" text-lg font-extrabold">
         <NavLink to="/">#VANLIFE</NavLink>
       </div>
-      {/* the NavLink component returns an object with a isActive property, a boolean which value depends on whether the route (to="/host" in the case below) is the current active route. We then use it to conditionally apply the styling. */}
       <nav className="flex gap-4 font-medium text-stone-600">
+        {/* the NavLink component returns an object with a isActive property, a boolean which value depends on whether the route (to="/host" in the case below) is the current active route. We then use it to conditionally apply the styling. */}
         <NavLink
           className={({ isActive }) =>
             isActive
