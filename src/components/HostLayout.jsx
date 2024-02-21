@@ -11,6 +11,7 @@ function HostLayout() {
               : 'hover:text-stone-700 hover:underline'
           }
           to="/host"
+          end
         >
           Dashboard
         </NavLink>
