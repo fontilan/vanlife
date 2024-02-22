@@ -31,6 +31,16 @@ function HostLayout() {
               ? 'font-bold text-stone-800 underline'
               : 'hover:text-stone-700 hover:underline'
           }
+          to="/host/vans"
+        >
+          Vans
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? 'font-bold text-stone-800 underline'
+              : 'hover:text-stone-700 hover:underline'
+          }
           to="/host/reviews"
         >
           Reviews
