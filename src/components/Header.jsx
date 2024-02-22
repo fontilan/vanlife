@@ -2,11 +2,11 @@ import { NavLink } from 'react-router-dom'
 
 function Header() {
   return (
-    <header className="flex justify-between px-4 py-8">
-      <div className=" text-lg font-extrabold">
+    <header className="flex justify-between px-6 py-8">
+      <div className=" text-2xl font-extrabold">
         <NavLink to="/">#VANLIFE</NavLink>
       </div>
-      <nav className="flex gap-4 font-medium text-stone-600">
+      <nav className="flex gap-6 font-medium text-stone-600">
         {/* the NavLink component returns an object with a isActive property, a boolean which value depends on whether the route (to="/host" in the case below) is the current active route. We then use it to conditionally apply the styling. */}
         <NavLink
           className={({ isActive }) =>
