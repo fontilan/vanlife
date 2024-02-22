@@ -36,10 +36,10 @@ function Vans() {
               (van.type === 'simple'
                 ? 'bg-orange-800'
                 : '' + van.type === 'rugged'
-                ? 'bg-emerald-800'
-                : '' + van.type === 'luxury'
-                ? 'bg-neutral-900'
-                : '')
+                  ? 'bg-emerald-800'
+                  : '' + van.type === 'luxury'
+                    ? 'bg-neutral-900'
+                    : '')
             }
           >
             {van.type}
@@ -50,7 +50,7 @@ function Vans() {
   }
 
   return (
-    <div className="mx-auto grid max-w-7xl px-4 py-12 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="mx-auto grid max-w-4xl px-4 py-12 sm:grid-cols-2 lg:grid-cols-3">
       {vansGrid}
     </div>
   )

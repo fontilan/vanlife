@@ -2,8 +2,8 @@ import { NavLink } from 'react-router-dom'
 
 function Header() {
   return (
-    <header className="flex justify-between px-6 py-8">
-      <div className=" text-2xl font-extrabold">
+    <header className="flex justify-between px-8 py-8">
+      <div className=" text-3xl font-black">
         <NavLink to="/">#VANLIFE</NavLink>
       </div>
       <nav className="flex gap-6 font-medium text-stone-600">
