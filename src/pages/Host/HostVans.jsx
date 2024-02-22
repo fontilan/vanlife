@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function HostVans() {
   const [hostVanData, setHostVanData] = useState(null)
@@ -20,9 +21,24 @@ function HostVans() {
 
   console.log('hostVanData:', hostVanData)
 
+  let hostVansGrid = []
+
+  if (hostVanData != null) {
+    hostVansGrid = hostVanData.map((van) => (
+      <div key={van.id}>
+        <Link to={van.id}>
+          <img src={van.imageUrl} />
+          <p>{van.name}</p>
+          <p>${van.price}/day</p>
+        </Link>
+      </div>
+    ))
+  }
+
   return (
     <div>
       <h1>Your listed vans</h1>
+      {hostVansGrid}
     </div>
   )
 }
