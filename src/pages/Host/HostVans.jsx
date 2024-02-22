@@ -1,8 +1,29 @@
+import { useEffect, useState } from 'react'
+
 function HostVans() {
+  const [hostVanData, setHostVanData] = useState(null)
+
+  useEffect(() => {
+    let ignore = false
+    setHostVanData(null)
+    fetch('/api/host/vans')
+      .then((res) => res.json())
+      .then((data) => {
+        if (!ignore) {
+          setHostVanData(data.vans)
+        }
+      })
+    return () => {
+      ignore = true
+    }
+  }, [])
+
+  console.log('hostVanData:', hostVanData)
+
   return (
-    <>
-      <h1>HostVans page goes here</h1>
-    </>
+    <div>
+      <h1>Your listed vans</h1>
+    </div>
   )
 }
 
