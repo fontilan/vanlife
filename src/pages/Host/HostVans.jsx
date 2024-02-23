@@ -21,24 +21,28 @@ function HostVans() {
 
   console.log('hostVanData:', hostVanData)
 
-  let hostVansGrid = []
+  let hostVansList = []
 
   if (hostVanData != null) {
-    hostVansGrid = hostVanData.map((van) => (
-      <div key={van.id}>
+    hostVansList = hostVanData.map((van) => (
+      <div key={van.id} className="py-2">
         <Link to={van.id}>
-          <img src={van.imageUrl} />
-          <p>{van.name}</p>
-          <p>${van.price}/day</p>
+          <div className="flex w-full items-center rounded-md bg-white px-6 py-5">
+            <img className="h-20 rounded-md" src={van.imageUrl} />
+            <div className="ml-4">
+              <p className="text-xl font-semibold">{van.name}</p>
+              <p className="text-stone-600">${van.price}/day</p>
+            </div>
+          </div>
         </Link>
       </div>
     ))
   }
 
   return (
-    <div>
-      <h1>Your listed vans</h1>
-      {hostVansGrid}
+    <div className=" py-4">
+      <h1 className="py-4 text-3xl font-bold">Your listed vans</h1>
+      {hostVansList}
     </div>
   )
 }
