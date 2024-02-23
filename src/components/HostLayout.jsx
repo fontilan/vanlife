@@ -21,7 +21,7 @@ function HostLayout() {
               ? 'font-bold text-stone-800 underline'
               : 'hover:text-stone-700 hover:underline'
           }
-          to="/host/income"
+          to="income"
         >
           Income
         </NavLink>
@@ -31,7 +31,7 @@ function HostLayout() {
               ? 'font-bold text-stone-800 underline'
               : 'hover:text-stone-700 hover:underline'
           }
-          to="/host/vans"
+          to="vans"
         >
           Vans
         </NavLink>
@@ -41,7 +41,7 @@ function HostLayout() {
               ? 'font-bold text-stone-800 underline'
               : 'hover:text-stone-700 hover:underline'
           }
-          to="/host/reviews"
+          to="reviews"
         >
           Reviews
         </NavLink>
