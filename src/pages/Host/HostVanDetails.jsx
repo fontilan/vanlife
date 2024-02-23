@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 
-function HostVanLayout() {
+function HostVanDetails() {
   const params = useParams()
   const [van, setVan] = useState(null)
 
@@ -12,7 +12,7 @@ function HostVanLayout() {
       .then((res) => res.json())
       .then((data) => {
         if (!ignore) {
-          setVan(data.vans)
+          setVan(data.vans[0])
         }
       })
     return () => {
@@ -29,25 +29,25 @@ function HostVanLayout() {
         ← <span className=" hover:underline">Back to all vans</span>
       </Link>
       <div className="flex rounded-md bg-white p-4">
-        <img className="h-48 rounded-md" src={van[0].imageUrl} />
+        <img className="h-48 rounded-md" src={van.imageUrl} />
         <div className="self-center p-4">
           <button
             className={
               'block rounded-md px-6 py-1 font-medium text-orange-50 ' +
-              (van[0].type === 'simple'
+              (van.type === 'simple'
                 ? 'bg-orange-800'
-                : '' + van[0].type === 'rugged'
+                : '' + van.type === 'rugged'
                   ? 'bg-emerald-800'
-                  : '' + van[0].type === 'luxury'
+                  : '' + van.type === 'luxury'
                     ? 'bg-neutral-900'
                     : '')
             }
           >
-            {van[0].type}
+            {van.type}
           </button>
-          <p className="my-4 text-2xl font-extrabold">{van[0].name}</p>
+          <p className="my-4 text-2xl font-extrabold">{van.name}</p>
           <p className="">
-            <span className="text-xl font-bold">${van[0].price}</span>/day
+            <span className="text-xl font-bold">${van.price}</span>/day
           </p>
         </div>
       </div>
@@ -59,4 +59,4 @@ function HostVanLayout() {
   )
 }
 
-export default HostVanLayout
+export default HostVanDetails
