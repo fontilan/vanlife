@@ -28,26 +28,29 @@ function HostVanLayout() {
       >
         ← <span className=" hover:underline">Back to all vans</span>
       </Link>
-      <img className="rounded-md" src={van[0].imageUrl} />
-      <button
-        className={
-          'mb-2 mt-4 block rounded-md px-6 py-1 font-medium text-orange-50 ' +
-          (van[0].type === 'simple'
-            ? 'bg-orange-800'
-            : '' + van[0].type === 'rugged'
-              ? 'bg-emerald-800'
-              : '' + van[0].type === 'luxury'
-                ? 'bg-neutral-900'
-                : '')
-        }
-      >
-        {van[0].type}
-      </button>
-      <p className="py-2 text-2xl font-extrabold">{van[0].name}</p>
-      <p className="py-2">
-        <span className="text-xl font-bold">${van[0].price}</span>/day
-      </p>
-      <p>{van[0].description}</p>
+      <div className="flex rounded-md bg-white p-4">
+        <img className="h-48 rounded-md" src={van[0].imageUrl} />
+        <div className="self-center p-4">
+          <button
+            className={
+              'block rounded-md px-6 py-1 font-medium text-orange-50 ' +
+              (van[0].type === 'simple'
+                ? 'bg-orange-800'
+                : '' + van[0].type === 'rugged'
+                  ? 'bg-emerald-800'
+                  : '' + van[0].type === 'luxury'
+                    ? 'bg-neutral-900'
+                    : '')
+            }
+          >
+            {van[0].type}
+          </button>
+          <p className="my-4 text-2xl font-extrabold">{van[0].name}</p>
+          <p className="">
+            <span className="text-xl font-bold">${van[0].price}</span>/day
+          </p>
+        </div>
+      </div>
     </div>
   ) : (
     <p className="flex h-screen w-screen items-center justify-center text-2xl font-semibold">
