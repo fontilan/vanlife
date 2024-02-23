@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
-function HostVanDetail() {
+function HostVanLayout() {
   const params = useParams()
   const [van, setVan] = useState(null)
 
@@ -50,4 +50,4 @@ function HostVanDetail() {
   )
 }
 
-export default HostVanDetail
+export default HostVanLayout
