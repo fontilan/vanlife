@@ -1,8 +1,8 @@
 function Income() {
   return (
-    <>
-      <h1>Income page goes here</h1>
-    </>
+    <div className="py-4">
+      <h1 className="py-4 text-3xl font-bold">Income page goes here</h1>
+    </div>
   )
 }
 
