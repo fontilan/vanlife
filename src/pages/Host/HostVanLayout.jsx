@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 function HostVanLayout() {
   const params = useParams()
@@ -21,7 +21,13 @@ function HostVanLayout() {
   }, [params.id])
 
   return van ? (
-    <div className="mx-auto max-w-2xl px-5 py-12">
+    <div className="max-w-2xl py-4">
+      <Link
+        className="block py-4 text-stone-600 hover:text-stone-800"
+        to="/host/vans"
+      >
+        ← <span className=" hover:underline">Back to all vans</span>
+      </Link>
       <img className="rounded-md" src={van[0].imageUrl} />
       <button
         className={
