@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 
 function Header() {
   return (
-    <header className="flex justify-between px-5 py-8">
+    <header className="flex items-center justify-between px-5 py-8">
       <div className=" text-3xl font-black">
         <NavLink to="/">#VANLIFE</NavLink>
       </div>
