@@ -6,7 +6,7 @@ import Footer from './Footer'
 
 function Layout() {
   return (
-    <main className="flex min-h-screen  flex-col bg-orange-50">
+    <main className="font-inter flex min-h-screen flex-col bg-orange-50">
       <Header />
       <div className="flex flex-grow">
         <Outlet />
