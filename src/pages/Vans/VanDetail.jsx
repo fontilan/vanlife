@@ -22,7 +22,7 @@ function VanDetails() {
   }, [params.id])
 
   return van ? (
-    <div className="mx-auto max-w-2xl px-4 py-12">
+    <div className="mx-auto max-w-2xl px-5 py-12">
       <img className="rounded-md" src={van.imageUrl} />
       <button
         className={
@@ -30,10 +30,10 @@ function VanDetails() {
           (van.type === 'simple'
             ? 'bg-orange-800'
             : '' + van.type === 'rugged'
-            ? 'bg-emerald-800'
-            : '' + van.type === 'luxury'
-            ? 'bg-neutral-900'
-            : '')
+              ? 'bg-emerald-800'
+              : '' + van.type === 'luxury'
+                ? 'bg-neutral-900'
+                : '')
         }
       >
         {van.type}

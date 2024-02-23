@@ -50,7 +50,7 @@ function Vans() {
   }
 
   return (
-    <div className="mx-auto grid max-w-4xl px-4 py-12 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="mx-auto grid max-w-4xl px-5 py-12 sm:grid-cols-2 lg:grid-cols-3">
       {vansGrid}
     </div>
   )
