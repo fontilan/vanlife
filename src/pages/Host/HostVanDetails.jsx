@@ -86,7 +86,7 @@ function HostVanDetails() {
             Pricing
           </NavLink>
         </nav>
-        <Outlet />
+        <Outlet context={[van]} />
       </div>
     </div>
   ) : (
