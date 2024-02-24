@@ -53,9 +53,39 @@ function HostVanDetails() {
             </p>
           </div>
         </div>
-        <NavLink to="">Details</NavLink>
-        <NavLink to="photos">Photos</NavLink>
-        <NavLink to="pricing">Pricing</NavLink>
+        <nav className="flex gap-7 py-4 font-medium text-stone-600">
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? 'font-bold text-stone-800 underline'
+                : 'hover:text-stone-700 hover:underline'
+            }
+            to="."
+            end
+          >
+            Details
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? 'font-bold text-stone-800 underline'
+                : 'hover:text-stone-700 hover:underline'
+            }
+            to="photos"
+          >
+            Photos
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? 'font-bold text-stone-800 underline'
+                : 'hover:text-stone-700 hover:underline'
+            }
+            to="pricing"
+          >
+            Pricing
+          </NavLink>
+        </nav>
         <Outlet />
       </div>
     </div>
