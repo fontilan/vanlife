@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 function About() {
   return (
-    <div className="mx-auto max-w-2xl px-5">
+    <div className="mx-auto max-w-2xl px-5 pb-12">
       <img
         className="h-60 w-full rounded-md object-cover"
         src="https://images.unsplash.com/flagged/photo-1557772350-e6061e459264?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"

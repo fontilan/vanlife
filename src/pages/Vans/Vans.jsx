@@ -23,7 +23,7 @@ function Vans() {
 
   if (vansData != null) {
     vansGrid = vansData.map((van) => (
-      <div className="p-4" key={van.id}>
+      <div className="px-4 pb-12" key={van.id}>
         <Link to={van.id}>
           <img className="rounded-md" src={van.imageUrl} />
           <div className="mt-2 flex justify-between">
@@ -50,7 +50,7 @@ function Vans() {
   }
 
   return (
-    <div className="mx-auto grid max-w-4xl px-5 py-12 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="mx-auto grid max-w-4xl px-5 pb-12 sm:grid-cols-2 lg:grid-cols-3">
       {vansGrid}
     </div>
   )
