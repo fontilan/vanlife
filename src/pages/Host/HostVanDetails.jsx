@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link, NavLink, Outlet } from 'react-router-dom'
 
-function HostVanSelected() {
+function HostVanDetails() {
   const params = useParams()
   const [van, setVan] = useState(null)
 
@@ -66,4 +66,4 @@ function HostVanSelected() {
   )
 }
 
-export default HostVanSelected
+export default HostVanDetails
