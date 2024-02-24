@@ -13,7 +13,6 @@ import HostVanDetails from './pages/Host/HostVanDetails'
 import HostVanPhotos from './pages/Host/HostVanPhotos'
 import HostVanPricing from './pages/Host/HostVanPricing'
 import HostVanInfo from './pages/Host/HostVanInfo'
-
 import Layout from './components/Layout'
 import HostLayout from './components/HostLayout'
 import './server'
