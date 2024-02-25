@@ -19,8 +19,6 @@ function HostVans() {
     }
   }, [])
 
-  console.log('hostVanData:', hostVanData)
-
   let hostVansList = []
 
   if (hostVanData != null) {
@@ -31,7 +29,7 @@ function HostVans() {
             <img className="h-28 rounded-sm" src={van.imageUrl} />
             <div className="ml-4">
               <p className="text-xl font-semibold">{van.name}</p>
-              <p className="text-stone-600">${van.price}/day</p>
+              <p className="text-neutral-600">${van.price}/day</p>
             </div>
           </div>
         </Link>

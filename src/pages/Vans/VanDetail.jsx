@@ -26,13 +26,13 @@ function VanDetails() {
       <img className="mb-8 rounded-md" src={van.imageUrl} />
       <button
         className={
-          'mb-4 block rounded-md px-6 py-1 font-medium text-orange-50 ' +
+          'mb-4 block rounded-md px-6 py-1 font-medium text-orange-100 ' +
           (van.type === 'simple'
             ? 'bg-orange-800'
             : '' + van.type === 'rugged'
-              ? 'bg-emerald-800'
+              ? 'bg-green-800'
               : '' + van.type === 'luxury'
-                ? 'bg-neutral-900'
+                ? 'bg-dark'
                 : '')
         }
       >

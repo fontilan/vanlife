@@ -23,7 +23,7 @@ function HostVanDetails() {
   return van ? (
     <div className="max-w-2xl py-4">
       <Link
-        className="block py-4 text-stone-600 hover:text-stone-800"
+        className="block py-4 text-neutral-600 hover:text-neutral-800"
         to=".."
         relative="path"
       >
@@ -35,13 +35,13 @@ function HostVanDetails() {
           <div className="self-center p-4">
             <button
               className={
-                'block rounded-md px-6 py-1 font-medium text-orange-50 ' +
+                'block rounded-md px-6 py-1 font-medium text-orange-100 ' +
                 (van.type === 'simple'
                   ? 'bg-orange-800'
                   : '' + van.type === 'rugged'
-                    ? 'bg-emerald-800'
+                    ? 'bg-green-800'
                     : '' + van.type === 'luxury'
-                      ? 'bg-neutral-900'
+                      ? 'bg-dark'
                       : '')
               }
             >
@@ -53,12 +53,12 @@ function HostVanDetails() {
             </p>
           </div>
         </div>
-        <nav className="flex gap-7 py-4 font-medium text-stone-600">
+        <nav className="flex gap-7 py-4 font-medium text-neutral-600">
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? 'font-bold text-stone-800 underline'
-                : 'hover:text-stone-700 hover:underline'
+                ? 'font-bold text-neutral-950 underline'
+                : 'hover:text-neutral-800 hover:underline'
             }
             to="."
             end
@@ -68,8 +68,8 @@ function HostVanDetails() {
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? 'font-bold text-stone-800 underline'
-                : 'hover:text-stone-700 hover:underline'
+                ? 'font-bold text-neutral-950 underline'
+                : 'hover:text-neutral-800 hover:underline'
             }
             to="photos"
           >
@@ -78,8 +78,8 @@ function HostVanDetails() {
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? 'font-bold text-stone-800 underline'
-                : 'hover:text-stone-700 hover:underline'
+                ? 'font-bold text-neutral-950 underline'
+                : 'hover:text-neutral-800 hover:underline'
             }
             to="pricing"
           >

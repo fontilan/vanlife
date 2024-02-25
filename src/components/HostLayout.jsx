@@ -2,13 +2,13 @@ import { NavLink, Outlet } from 'react-router-dom'
 
 function HostLayout() {
   return (
-    <div className="w-screen px-5 py-4">
-      <nav className="flex gap-7 font-medium text-stone-600">
+    <div className="w-screen px-5 pb-12">
+      <nav className="flex gap-7 py-4 font-medium text-neutral-600">
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? 'font-bold text-stone-800 underline'
-              : 'hover:text-stone-700 hover:underline'
+              ? 'font-bold text-neutral-950 underline'
+              : 'hover:text-neutral-800 hover:underline'
           }
           to="/host"
           end
@@ -18,8 +18,8 @@ function HostLayout() {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? 'font-bold text-stone-800 underline'
-              : 'hover:text-stone-700 hover:underline'
+              ? 'font-bold text-neutral-950 underline'
+              : 'hover:text-neutral-800 hover:underline'
           }
           to="income"
         >
@@ -28,8 +28,8 @@ function HostLayout() {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? 'font-bold text-stone-800 underline'
-              : 'hover:text-stone-700 hover:underline'
+              ? 'font-bold text-neutral-950 underline'
+              : 'hover:text-neutral-800 hover:underline'
           }
           to="vans"
         >
@@ -38,8 +38,8 @@ function HostLayout() {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? 'font-bold text-stone-800 underline'
-              : 'hover:text-stone-700 hover:underline'
+              ? 'font-bold text-neutral-950 underline'
+              : 'hover:text-neutral-800 hover:underline'
           }
           to="reviews"
         >
