@@ -67,6 +67,20 @@ function Vans() {
   return (
     <div id="vans" className="px-5 pb-12">
       <h1 className="py-5 text-3xl font-bold">Explore our van options</h1>
+      <nav className="flex items-center gap-7 py-5 font-medium text-neutral-600">
+        <Link className="rounded-md bg-orange-100 px-6 py-2" to="?type=simple">
+          Simple
+        </Link>
+        <Link className="rounded-md bg-orange-100 px-6 py-2" to="?type=luxury">
+          Luxury
+        </Link>
+        <Link className="rounded-md bg-orange-100 px-6 py-2" to="?type=rugged">
+          Rugged
+        </Link>
+        <Link className="underline" to=".">
+          Clear filters
+        </Link>
+      </nav>
       <div className="mx-auto grid max-w-4xl gap-12 pt-5 sm:grid-cols-2 lg:grid-cols-3">
         {vansGrid}
       </div>
