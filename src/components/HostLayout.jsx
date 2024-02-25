@@ -2,8 +2,8 @@ import { NavLink, Outlet } from 'react-router-dom'
 
 function HostLayout() {
   return (
-    <div className="w-screen px-5 pb-12">
-      <nav className="flex gap-7 py-4 font-medium text-neutral-600">
+    <div className="w-screen px-5 pb-12" id="host-content">
+      <nav className="flex gap-7 py-5 font-medium text-neutral-600">
         <NavLink
           className={({ isActive }) =>
             isActive
