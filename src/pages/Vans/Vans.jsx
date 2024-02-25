@@ -10,16 +10,16 @@ function Vans() {
   // https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
   let typeFilter = searchParams.get('type')
 
-  const [vansData, setVansData] = useState(null)
+  const [vans, setVans] = useState(null)
 
   useEffect(() => {
     let ignore = false
-    setVansData(null)
+    setVans(null)
     fetch('/api/vans')
       .then((res) => res.json())
       .then((data) => {
         if (!ignore) {
-          setVansData(data.vans)
+          setVans(data.vans)
         }
       })
     return () => {
@@ -27,10 +27,16 @@ function Vans() {
     }
   }, [])
 
-  let vansGrid = []
+  let filteredVans = []
 
-  if (vansData != null) {
-    vansGrid = vansData.map((van) => (
+  if (vans != null)
+    filteredVans = typeFilter
+      ? vans.filter((van) => van.type === typeFilter)
+      : vans
+
+  let vansGrid = []
+  if (vans != null) {
+    vansGrid = filteredVans.map((van) => (
       <div className="pb-5" key={van.id}>
         <Link to={van.id}>
           <img className="rounded-md" src={van.imageUrl} />
