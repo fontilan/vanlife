@@ -1,7 +1,15 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 
 function Vans() {
+  // The useSearchParams hook is used to read and modify the query string in the URL for the current location. Like React's own useState hook, useSearchParams returns an array of two values: the current location's search params and a function that may be used to update them.
+  // https://reactrouter.com/en/main/hooks/use-search-params
+  let [searchParams, setSearchParams] = useSearchParams()
+
+  // The URLSearchParams interface defines utility methods to work with the query string of a URL. URLSearchParams.get() returns the first value associated with the given search parameter.
+  // https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
+  let typeFilter = searchParams.get('type')
+
   const [vansData, setVansData] = useState(null)
 
   useEffect(() => {
