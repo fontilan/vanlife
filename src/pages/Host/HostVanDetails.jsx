@@ -21,9 +21,9 @@ function HostVanDetails() {
   }, [params.id])
 
   return van ? (
-    <div className="max-w-2xl py-4">
+    <div className="max-w-2xl py-5">
       <Link
-        className="block py-4 text-neutral-600 hover:text-neutral-800"
+        className="block py-5 text-neutral-600 hover:text-neutral-800"
         to=".."
         relative="path"
       >
