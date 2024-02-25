@@ -26,10 +26,11 @@ function Vans() {
       <div className="pb-12" key={van.id}>
         <Link to={van.id}>
           <img className="rounded-md" src={van.imageUrl} />
-          <div className="mt-2 flex justify-between">
-            <p className="text-xl font-semibold">{van.name}</p>
-            <p>${van.price}/day</p>
+          <div className="mt-2 flex items-center justify-between text-xl font-semibold">
+            <p className="">{van.name}</p>
+            <p>${van.price}</p>
           </div>
+          <p className="relative -top-1 float-right">/day</p>
           <button
             className={
               'mt-2 block rounded-md px-6 py-1 font-medium text-orange-100 ' +
