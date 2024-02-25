@@ -38,7 +38,7 @@ function HostVans() {
   }
 
   return (
-    <div className=" py-4">
+    <div className="py-4">
       <h1 className="py-4 text-3xl font-bold">Your listed vans</h1>
       {hostVansList}
     </div>

@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 function Header() {
   return (
     <header className="flex items-center justify-between px-5 py-8">
-      <div className=" text-3xl font-black text-neutral-950">
+      <div className="text-3xl font-black text-neutral-950">
         <NavLink to="/">#VANLIFE</NavLink>
       </div>
       <nav className="flex gap-7 font-medium text-neutral-600">

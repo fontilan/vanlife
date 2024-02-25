@@ -27,7 +27,7 @@ function HostVanDetails() {
         to=".."
         relative="path"
       >
-        ← <span className=" hover:underline">Back to all vans</span>
+        ← <span className="hover:underline">Back to all vans</span>
       </Link>
       <div className="rounded-md bg-white p-4">
         <div className="flex">
