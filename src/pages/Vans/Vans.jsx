@@ -64,6 +64,7 @@ function Vans() {
     ))
   }
 
+  // Is it possible to add conditional rendering of those button classNames, so that they change their background color not only on hover, but also when they are selected/active? We can get the state of being selected from the value of typeFilter, but afaik it is not possible to conditionally render class names in TailwindCSS. Something to investigate further.
   return (
     <div id="vans" className="px-5 pb-12">
       <h1 className="py-5 text-3xl font-bold">Explore our van options</h1>
