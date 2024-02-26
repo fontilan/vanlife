@@ -86,12 +86,14 @@ function Vans() {
         >
           Rugged
         </button>
-        <button
-          className="underline hover:text-neutral-800"
-          onClick={() => setSearchParams({})}
-        >
-          Clear filters
-        </button>
+        {typeFilter ? (
+          <button
+            className="underline hover:text-neutral-800"
+            onClick={() => setSearchParams({})}
+          >
+            Clear filters
+          </button>
+        ) : null}
       </nav>
       <div className="mx-auto grid max-w-4xl gap-12 pt-5 sm:grid-cols-2 lg:grid-cols-3">
         {vansGrid}
