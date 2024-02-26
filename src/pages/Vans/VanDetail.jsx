@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 function VanDetails() {
   const params = useParams()
@@ -23,7 +23,14 @@ function VanDetails() {
 
   return van ? (
     <div className="mx-auto max-w-2xl pb-12">
-      <img className="mb-8 rounded-md" src={van.imageUrl} />
+      <Link
+        className="block py-5 text-neutral-600 hover:text-neutral-800"
+        to=".."
+        relative="path"
+      >
+        ← <span className="hover:underline">Back to all vans</span>
+      </Link>
+      <img className="mb-12 mt-5 rounded-md" src={van.imageUrl} />
       <button
         className={
           'mb-4 block rounded-md px-6 py-1 font-medium text-orange-100 ' +
