@@ -28,7 +28,7 @@ function About() {
         <p className="text-xl font-bold">Your destination is waiting.</p>
         <p className="text-xl font-bold">Your van is ready.</p>
         <Link
-          className="bg-dark mt-4 inline-block rounded-md px-3 py-2 font-semibold text-neutral-600 duration-100 ease-in-out hover:translate-x-1 hover:translate-y-1"
+          className="mt-4 inline-block rounded-md bg-dark px-3 py-2 font-semibold text-neutral-600 duration-100 ease-in-out hover:translate-x-0.5 hover:translate-y-0.5"
           to="/vans"
         >
           Explore our vans
