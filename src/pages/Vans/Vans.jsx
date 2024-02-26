@@ -69,25 +69,25 @@ function Vans() {
       <h1 className="py-5 text-3xl font-bold">Explore our van options</h1>
       <nav className="flex items-center gap-7 py-5 font-medium text-neutral-600">
         <button
-          className="rounded-md bg-orange-100 px-6 py-2"
+          className="rounded-md bg-orange-100 px-6 py-2 hover:bg-orange-800 hover:text-orange-100"
           onClick={() => setSearchParams({ type: 'simple' })}
         >
           Simple
         </button>
         <button
-          className="rounded-md bg-orange-100 px-6 py-2"
+          className="rounded-md bg-orange-100 px-6 py-2 hover:bg-dark hover:text-orange-100"
           onClick={() => setSearchParams({ type: 'luxury' })}
         >
           Luxury
         </button>
         <button
-          className="rounded-md bg-orange-100 px-6 py-2"
+          className="rounded-md bg-orange-100 px-6 py-2 hover:bg-green-800 hover:text-orange-100"
           onClick={() => setSearchParams({ type: 'rugged' })}
         >
           Rugged
         </button>
         <button
-          className="rounded-md bg-orange-100 px-6 py-2"
+          className="underline hover:text-neutral-800"
           onClick={() => setSearchParams({})}
         >
           Clear filters
