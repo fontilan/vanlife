@@ -43,6 +43,9 @@ function VanDetails() {
         <span className="text-2xl font-bold">${van.price}</span>/day
       </p>
       <p className="mb-4">{van.description}</p>
+      <button className="mt-8 w-full rounded-md bg-orange-400 p-3 text-center font-bold text-white shadow-sm duration-100 ease-in-out hover:translate-x-0.5 hover:translate-y-0.5">
+        Rent this van
+      </button>
     </div>
   ) : (
     <p className="flex h-screen w-screen items-center justify-center text-2xl font-semibold">
