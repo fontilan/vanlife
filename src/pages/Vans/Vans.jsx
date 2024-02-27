@@ -64,25 +64,51 @@ function Vans() {
     ))
   }
 
-  // Is it possible to add conditional rendering of those button classNames, so that they change their background color not only on hover, but also when they are selected/active? We can get the state of being selected from the value of typeFilter, but afaik it is not possible to conditionally render class names in TailwindCSS. Something to investigate further.
+  // Conditional styling of the buttons, based on the value of the typeFilter. Why was this problematic? In TailwindCSS you cannot add the same property (bg-...) but with a different value (bg-green) so that it will overwrite the previous one (bg-orange). Well actualy you can, but... Tailwind applies those classes in alphabetical order (!) so bg-green won't overwrite bg-orange, but it WILL overwrite bg-dark for example.
+  // As a result, for clarity, those properties have been extracted and are applied conditionally here.
+
+  // Could also destruct all the properties into a few generalized ones like
+  // buttonStyle = "rounded-md px-6 py-2"
+  // simpleHover = " hover:bg-orange-800 hover:text-orange-100"
+  // and then the Simple button could have
+  // className={buttonStyle + simpleHover + simpleActive}
+  // Not sure if that would be better/more readable
+  const simpleActive =
+    typeFilter === 'simple'
+      ? ' bg-orange-800 text-orange-100'
+      : ' bg-orange-100'
+  const luxuryActive =
+    typeFilter === 'luxury' ? ' bg-dark text-orange-100' : ' bg-orange-100'
+  const ruggedActive =
+    typeFilter === 'rugged' ? ' bg-green-800 text-orange-100' : ' bg-orange-100'
+
   return (
     <div id="vans" className="px-5 pb-12">
       <h1 className="py-5 text-3xl font-bold">Explore our van options</h1>
       <nav className="flex items-center gap-7 py-5 font-medium text-neutral-600">
         <button
-          className="rounded-md bg-orange-100 px-6 py-2 hover:bg-orange-800 hover:text-orange-100"
+          className={
+            'rounded-md px-6 py-2 hover:bg-orange-800 hover:text-orange-100' +
+            simpleActive
+          }
           onClick={() => setSearchParams({ type: 'simple' })}
         >
           Simple
         </button>
         <button
-          className="rounded-md bg-orange-100 px-6 py-2 hover:bg-dark hover:text-orange-100"
+          className={
+            'rounded-md px-6 py-2 hover:bg-dark hover:text-orange-100' +
+            luxuryActive
+          }
           onClick={() => setSearchParams({ type: 'luxury' })}
         >
           Luxury
         </button>
         <button
-          className="rounded-md bg-orange-100 px-6 py-2 hover:bg-green-800 hover:text-orange-100"
+          className={
+            'rounded-md px-6 py-2 hover:bg-green-800 hover:text-orange-100' +
+            ruggedActive
+          }
           onClick={() => setSearchParams({ type: 'rugged' })}
         >
           Rugged
