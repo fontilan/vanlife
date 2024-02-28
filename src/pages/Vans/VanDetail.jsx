@@ -26,7 +26,7 @@ function VanDetails() {
   const type = location.state?.type || 'all'
 
   return van ? (
-    <div className="mx-auto max-w-2xl pb-12">
+    <div id="van-details" className="mx-auto max-w-2xl px-5 pb-12">
       <Link
         className="block py-5 text-neutral-600 hover:text-neutral-800"
         to={'..?' + location.state.search}
@@ -59,9 +59,7 @@ function VanDetails() {
       </button>
     </div>
   ) : (
-    <p className="flex h-screen w-screen items-center justify-center text-2xl font-semibold">
-      Loading...
-    </p>
+    <p className="mx-auto self-center text-2xl font-semibold">Loading...</p>
   )
 }
 
