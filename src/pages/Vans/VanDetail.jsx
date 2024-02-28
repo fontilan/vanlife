@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useLocation } from 'react-router-dom'
 
 function VanDetails() {
   const params = useParams()
-
+  const location = useLocation()
   const [van, setVan] = useState(null)
 
   useEffect(() => {
@@ -25,7 +25,7 @@ function VanDetails() {
     <div className="mx-auto max-w-2xl pb-12">
       <Link
         className="block py-5 text-neutral-600 hover:text-neutral-800"
-        to=".."
+        to={'..?' + location.state.search}
         relative="path"
       >
         ← <span className="hover:underline">Back to all vans</span>

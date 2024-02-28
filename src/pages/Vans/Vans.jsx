@@ -38,7 +38,7 @@ function Vans() {
   if (vans != null) {
     vansGrid = filteredVans.map((van) => (
       <div className="pb-5" key={van.id}>
-        <Link to={van.id}>
+        <Link to={van.id} state={{ search: searchParams.toString() }}>
           <img className="rounded-md" src={van.imageUrl} />
           <div className="flex items-center justify-between py-3 text-2xl font-semibold">
             <p className="">{van.name}</p>
