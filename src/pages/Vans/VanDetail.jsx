@@ -21,6 +21,10 @@ function VanDetails() {
     }
   }, [params.id])
 
+  // Using optional chaining here. If location.state exists then check the type. If state does not exist (is null) then return "all".
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
+  const type = location.state?.type || 'all'
+
   return van ? (
     <div className="mx-auto max-w-2xl pb-12">
       <Link
@@ -28,7 +32,7 @@ function VanDetails() {
         to={'..?' + location.state.search}
         relative="path"
       >
-        ← <span className="hover:underline">Back to all vans</span>
+        ← <span className="hover:underline">Back to {type} vans</span>
       </Link>
       <img className="mb-12 mt-5 rounded-md" src={van.imageUrl} />
       <button
