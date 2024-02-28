@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
+import { getVans } from '../../api'
 
 function Vans() {
   // The useSearchParams hook is used to read and modify the query string in the URL for the current location. Like React's own useState hook, useSearchParams returns an array of two values: the current location's search params and a function that may be used to update them.
@@ -10,65 +11,55 @@ function Vans() {
   // https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
   let typeFilter = searchParams.get('type')
 
-  const [vans, setVans] = useState(null)
+  const [vans, setVans] = useState([])
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    let ignore = false
-    setVans(null)
-    fetch('/api/vans')
-      .then((res) => res.json())
-      .then((data) => {
-        if (!ignore) {
-          setVans(data.vans)
-        }
-      })
-    return () => {
-      ignore = true
+    async function loadVans() {
+      setLoading(true)
+      const data = await getVans()
+      setVans(data)
+      setLoading(false)
     }
+    loadVans()
   }, [])
 
-  let filteredVans = []
+  const filteredVans = typeFilter
+    ? vans.filter((van) => van.type === typeFilter)
+    : vans
 
-  if (vans != null)
-    filteredVans = typeFilter
-      ? vans.filter((van) => van.type === typeFilter)
-      : vans
-
-  let vansGrid = []
-  if (vans != null) {
-    vansGrid = filteredVans.map((van) => (
-      <div className="pb-5" key={van.id}>
-        <Link
-          to={van.id}
-          state={{
-            search: searchParams.toString(),
-            type: typeFilter,
-          }}
+  const vansGrid = filteredVans.map((van) => (
+    <div className="pb-5" key={van.id}>
+      <Link
+        to={van.id}
+        state={{
+          search: searchParams.toString(),
+          type: typeFilter,
+        }}
+      >
+        <img className="rounded-md" src={van.imageUrl} />
+        <div className="flex items-center justify-between py-3 text-2xl font-semibold">
+          <p className="">{van.name}</p>
+          <p>${van.price}</p>
+        </div>
+        <p className="relative -top-4 float-right">/day</p>
+        <button
+          className={
+            'mt-2 block rounded-md px-5 py-2 font-medium text-orange-100 ' +
+            (van.type === 'simple'
+              ? 'bg-orange-800'
+              : '' + van.type === 'rugged'
+                ? 'bg-green-800'
+                : '' + van.type === 'luxury'
+                  ? 'bg-dark'
+                  : '')
+          }
         >
-          <img className="rounded-md" src={van.imageUrl} />
-          <div className="flex items-center justify-between py-3 text-2xl font-semibold">
-            <p className="">{van.name}</p>
-            <p>${van.price}</p>
-          </div>
-          <p className="relative -top-4 float-right">/day</p>
-          <button
-            className={
-              'mt-2 block rounded-md px-5 py-2 font-medium text-orange-100 ' +
-              (van.type === 'simple'
-                ? 'bg-orange-800'
-                : '' + van.type === 'rugged'
-                  ? 'bg-green-800'
-                  : '' + van.type === 'luxury'
-                    ? 'bg-dark'
-                    : '')
-            }
-          >
-            {van.type}
-          </button>
-        </Link>
-      </div>
-    ))
-  }
+          {van.type}
+        </button>
+      </Link>
+    </div>
+  ))
 
   // Conditional styling of the buttons, based on the value of the typeFilter. Why was this problematic? In TailwindCSS you cannot add the same property (bg-...) but with a different value (bg-green) so that it will overwrite the previous one (bg-orange). Well actualy you can, but... Tailwind applies those classes in alphabetical order (!) so bg-green won't overwrite bg-orange, but it WILL overwrite bg-dark for example.
   // As a result, for clarity, those properties have been extracted and are applied conditionally here.
@@ -87,6 +78,10 @@ function Vans() {
     typeFilter === 'luxury' ? ' bg-dark text-orange-100' : ' bg-orange-100'
   const ruggedActive =
     typeFilter === 'rugged' ? ' bg-green-800 text-orange-100' : ' bg-orange-100'
+
+  if (loading) {
+    return <h1>Loading</h1>
+  }
 
   return (
     <div id="vans" className="px-5 pb-12">
