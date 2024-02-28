@@ -21,7 +21,7 @@ function HostVanDetails() {
   }, [params.id])
 
   return van ? (
-    <div className="max-w-2xl py-5">
+    <div id="host-van-details" className="max-w-2xl pb-12">
       <Link
         className="block py-5 text-neutral-600 hover:text-neutral-800"
         to=".."
@@ -90,7 +90,7 @@ function HostVanDetails() {
       </div>
     </div>
   ) : (
-    <p className="flex h-screen w-screen items-center justify-center text-2xl font-semibold">
+    <p className="flex h-full items-center justify-center text-2xl font-semibold">
       Loading...
     </p>
   )
