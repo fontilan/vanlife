@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import About from './pages/About'
 import Home from './pages/Home'
+import NotFound from './pages/NotFound'
 import Vans from './pages/Vans/Vans'
 import VanDetail from './pages/Vans/VanDetail'
 import Dashboard from './pages/Host/Dashboard'
@@ -38,6 +39,7 @@ function App() {
             </Route>
             <Route path="reviews" element={<Reviews />} />
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
