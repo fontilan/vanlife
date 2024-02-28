@@ -87,11 +87,23 @@ function Vans() {
     typeFilter === 'rugged' ? ' bg-green-800 text-orange-100' : ' bg-orange-100'
 
   if (loading) {
-    return <h1 aria-live="polite">Loading</h1>
+    return (
+      <div className="mx-auto max-w-md self-center p-5 py-4">
+        <h1 aria-live="polite" className="text-2xl font-bold">
+          Loading...
+        </h1>
+      </div>
+    )
   }
 
   if (error) {
-    return <h1 aria-live="assertive">There was an error: {error.message}</h1>
+    return (
+      <div className="mx-auto max-w-md self-center p-5 py-4">
+        <h1 aria-live="assertive" className="text-2xl font-bold">
+          There was an error: {error.message}
+        </h1>
+      </div>
+    )
   }
 
   return (
