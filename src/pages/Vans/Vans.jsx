@@ -1,6 +1,10 @@
-import { useEffect, useState } from 'react'
-import { Link, useSearchParams } from 'react-router-dom'
+import { useState } from 'react'
+import { Link, useSearchParams, useLoaderData } from 'react-router-dom'
 import { getVans } from '../../api'
+
+export function loader() {
+  return getVans()
+}
 
 function Vans() {
   // The useSearchParams hook is used to read and modify the query string in the URL for the current location. Like React's own useState hook, useSearchParams returns an array of two values: the current location's search params and a function that may be used to update them.
@@ -10,26 +14,8 @@ function Vans() {
   // The URLSearchParams interface defines utility methods to work with the query string of a URL. URLSearchParams.get() returns the first value associated with the given search parameter.
   // https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
   let typeFilter = searchParams.get('type')
-
-  const [vans, setVans] = useState([])
-  const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
-
-  useEffect(() => {
-    async function loadVans() {
-      setLoading(true)
-      try {
-        const data = await getVans()
-        setVans(data)
-      } catch (err) {
-        setError(err)
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    loadVans()
-  }, [])
+  const vans = useLoaderData()
 
   const filteredVans = typeFilter
     ? vans.filter((van) => van.type === typeFilter)
@@ -85,16 +71,6 @@ function Vans() {
     typeFilter === 'luxury' ? ' bg-dark text-orange-100' : ' bg-orange-100'
   const ruggedActive =
     typeFilter === 'rugged' ? ' bg-green-800 text-orange-100' : ' bg-orange-100'
-
-  if (loading) {
-    return (
-      <div className="mx-auto max-w-md self-center p-5 py-4">
-        <h1 aria-live="polite" className="text-2xl font-bold">
-          Loading...
-        </h1>
-      </div>
-    )
-  }
 
   if (error) {
     return (
