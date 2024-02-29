@@ -28,14 +28,68 @@ const router = createBrowserRouter(
       <Route path="about" element={<About />} />
       <Route path="vans" element={<Vans />} loader={vansPageLoader} />
       <Route path="vans/:id" element={<VanDetail />} />
-      <Route path="host" element={<HostLayout />}>
-        <Route index element={<Dashboard />} />
-        <Route path="income" element={<Income />} />
-        <Route path="vans" element={<HostVans />} />
-        <Route path="vans/:id" element={<HostVanDetails />}>
-          <Route index element={<HostVanInfo />} />
-          <Route path="pricing" element={<HostVanPricing />} />
-          <Route path="photos" element={<HostVanPhotos />} />
+      <Route
+        path="host"
+        element={
+          <HostLayout
+            loader={async () => {
+              return null
+            }}
+          />
+        }
+      >
+        <Route
+          index
+          element={<Dashboard />}
+          loader={async () => {
+            return null
+          }}
+        />
+        <Route
+          path="income"
+          element={<Income />}
+          loader={async () => {
+            return null
+          }}
+        />
+        <Route
+          path="vans"
+          element={<HostVans />}
+          loader={async () => {
+            return null
+          }}
+        />
+        <Route
+          path="vans/:id"
+          element={
+            <HostVanDetails
+              loader={async () => {
+                return null
+              }}
+            />
+          }
+        >
+          <Route
+            index
+            element={<HostVanInfo />}
+            loader={async () => {
+              return null
+            }}
+          />
+          <Route
+            path="pricing"
+            element={<HostVanPricing />}
+            loader={async () => {
+              return null
+            }}
+          />
+          <Route
+            path="photos"
+            element={<HostVanPhotos />}
+            loader={async () => {
+              return null
+            }}
+          />
         </Route>
         <Route path="reviews" element={<Reviews />} />
       </Route>
