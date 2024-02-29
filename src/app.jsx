@@ -7,8 +7,8 @@ import {
 import About from './pages/About'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
-import Vans, { loader as vansPageLoader } from './pages/Vans/Vans'
-import VanDetail from './pages/Vans/VanDetail'
+import Vans, { loader as vansLoader } from './pages/Vans/Vans'
+import VanDetail, { loader as vanDetailsLoader } from './pages/Vans/VanDetail'
 import Dashboard from './pages/Host/Dashboard'
 import Income from './pages/Host/Income'
 import Reviews from './pages/Host/Reviews'
@@ -26,18 +26,13 @@ const router = createBrowserRouter(
     <Route path="/" element={<Layout />} errorElement={<Error />}>
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
-      <Route path="vans" element={<Vans />} loader={vansPageLoader} />
-      <Route path="vans/:id" element={<VanDetail />} />
+      <Route path="vans" element={<Vans />} loader={vansLoader} />
       <Route
-        path="host"
-        element={
-          <HostLayout
-            loader={async () => {
-              return null
-            }}
-          />
-        }
-      >
+        path="vans/:id"
+        element={<VanDetail />}
+        loader={vanDetailsLoader}
+      />
+      <Route path="host" element={<HostLayout />}>
         <Route
           index
           element={<Dashboard />}
