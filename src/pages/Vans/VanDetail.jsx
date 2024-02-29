@@ -1,31 +1,19 @@
-import { useEffect, useState } from 'react'
-import { useParams, Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useLoaderData } from 'react-router-dom'
+import { getVans } from '../../api'
+
+export function loader({ params }) {
+  return getVans(params.id)
+}
 
 function VanDetails() {
-  const params = useParams()
   const location = useLocation()
-  const [van, setVan] = useState(null)
-
-  useEffect(() => {
-    let ignore = false
-    setVan(null)
-    fetch(`/api/vans/${params.id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (!ignore) {
-          setVan(data.vans)
-        }
-      })
-    return () => {
-      ignore = true
-    }
-  }, [params.id])
+  const van = useLoaderData()
 
   // Using optional chaining here. If location.state exists then check the type. If state does not exist (is null) then return "all".
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
   const type = location.state?.type || 'all'
 
-  return van ? (
+  return (
     <div id="van-details" className="mx-auto max-w-2xl px-5 pb-12">
       <Link
         className="block py-5 text-neutral-600 hover:text-neutral-800"
@@ -58,8 +46,6 @@ function VanDetails() {
         Rent this van
       </button>
     </div>
-  ) : (
-    <p className="mx-auto self-center text-2xl font-semibold">Loading...</p>
   )
 }
 
