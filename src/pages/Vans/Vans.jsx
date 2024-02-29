@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Link, useSearchParams, useLoaderData } from 'react-router-dom'
 import { getVans } from '../../api'
 
@@ -14,7 +13,6 @@ function Vans() {
   // The URLSearchParams interface defines utility methods to work with the query string of a URL. URLSearchParams.get() returns the first value associated with the given search parameter.
   // https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
   const typeFilter = searchParams.get('type')
-  const [error, setError] = useState(null)
   const vans = useLoaderData()
 
   const filteredVans = typeFilter
@@ -71,16 +69,6 @@ function Vans() {
     typeFilter === 'luxury' ? ' bg-dark text-orange-100' : ' bg-orange-100'
   const ruggedActive =
     typeFilter === 'rugged' ? ' bg-green-800 text-orange-100' : ' bg-orange-100'
-
-  if (error) {
-    return (
-      <div className="mx-auto max-w-md self-center p-5 py-4">
-        <h1 aria-live="assertive" className="text-2xl font-bold">
-          There was an error: {error.message}
-        </h1>
-      </div>
-    )
-  }
 
   return (
     <div id="vans" className="px-5 pb-12">
