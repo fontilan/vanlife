@@ -38,6 +38,16 @@ function Header() {
         >
           Vans
         </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? 'font-bold text-neutral-950 underline'
+              : 'hover:text-neutral-800 hover:underline'
+          }
+          to="/login"
+        >
+          Login
+        </NavLink>
       </nav>
     </header>
   )
