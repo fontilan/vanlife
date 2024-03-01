@@ -8,7 +8,7 @@ import About from './pages/About'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import Vans, { loader as vansLoader } from './pages/Vans/Vans'
-import VanDetail, { loader as vanDetailsLoader } from './pages/Vans/VanDetail'
+import VanDetails, { loader as vanDetailsLoader } from './pages/Vans/VanDetails'
 import Dashboard from './pages/Host/Dashboard'
 import Income from './pages/Host/Income'
 import Reviews from './pages/Host/Reviews'
@@ -31,7 +31,7 @@ const router = createBrowserRouter(
       <Route path="vans" element={<Vans />} loader={vansLoader} />
       <Route
         path="vans/:id"
-        element={<VanDetail />}
+        element={<VanDetails />}
         loader={vanDetailsLoader}
       />
       <Route path="host" element={<HostLayout />}>
