@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import imageUrl from '../assets/images/avatar-icon.png'
 
 function Header() {
   /* the NavLink component returns an object with a isActive property, a boolean which value depends on whether the route is the current active route. We then use it to conditionally apply the styling. */
@@ -22,8 +23,8 @@ function Header() {
         <NavLink className={navLinkStyle} to="/vans">
           Vans
         </NavLink>
-        <NavLink className={navLinkStyle} to="/login">
-          Login
+        <NavLink to="/login">
+          <img className="h-6" src={imageUrl} alt="login-icon" />
         </NavLink>
       </nav>
     </header>
