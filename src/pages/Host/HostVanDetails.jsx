@@ -1,26 +1,14 @@
-import { useState, useEffect } from 'react'
-import { useParams, Link, NavLink, Outlet } from 'react-router-dom'
+import { Link, NavLink, Outlet, useLoaderData } from 'react-router-dom'
+import { getHostVans } from '../../api'
+
+export function loader({ params }) {
+  return getHostVans(params.id)
+}
 
 function HostVanDetails() {
-  const params = useParams()
-  const [van, setVan] = useState(null)
+  const van = useLoaderData()
 
-  useEffect(() => {
-    let ignore = false
-    setVan(null)
-    fetch(`/api/host/vans/${params.id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (!ignore) {
-          setVan(data.vans[0])
-        }
-      })
-    return () => {
-      ignore = true
-    }
-  }, [params.id])
-
-  return van ? (
+  return (
     <div id="host-van-details" className="max-w-2xl pb-12">
       <Link
         className="block py-5 text-neutral-600 hover:text-neutral-800"
@@ -89,10 +77,6 @@ function HostVanDetails() {
         <Outlet context={[van]} />
       </div>
     </div>
-  ) : (
-    <p className="flex h-full items-center justify-center text-2xl font-semibold">
-      Loading...
-    </p>
   )
 }
 
