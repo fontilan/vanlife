@@ -4,9 +4,10 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom'
+
 import About from './pages/About'
 import Home from './pages/Home'
-import NotFound from './pages/NotFound'
+import Login from './pages/Login'
 import Vans, { loader as vansLoader } from './pages/Vans/Vans'
 import VanDetails, { loader as vanDetailsLoader } from './pages/Vans/VanDetails'
 import Dashboard from './pages/Host/Dashboard'
@@ -21,6 +22,7 @@ import HostVanPricing from './pages/Host/HostVanPricing'
 import HostVanInfo from './pages/Host/HostVanInfo'
 import Layout from './components/Layout'
 import HostLayout from './components/HostLayout'
+import NotFound from './pages/NotFound'
 import Error from './components/Error'
 
 const router = createBrowserRouter(
@@ -79,6 +81,7 @@ const router = createBrowserRouter(
         </Route>
         <Route path="reviews" element={<Reviews />} />
       </Route>
+      <Route path="login" element={<Login />} />
       <Route path="*" element={<NotFound />} />
     </Route>,
   ),
