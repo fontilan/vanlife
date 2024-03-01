@@ -53,14 +53,8 @@ function Vans() {
   ))
 
   // Conditional styling of the buttons, based on the value of the typeFilter. Why was this problematic? In TailwindCSS you cannot add the same property (bg-...) but with a different value (bg-green) so that it will overwrite the previous one (bg-orange). Well actualy you can, but... Tailwind applies those classes in alphabetical order (!) so bg-green won't overwrite bg-orange, but it WILL overwrite bg-dark for example.
-  // As a result, for clarity, those properties have been extracted and are applied conditionally here.
+  const button = 'rounded-md px-6 py-2  hover:text-orange-100'
 
-  // Could also destruct all the properties into a few generalized ones like
-  // buttonStyle = "rounded-md px-6 py-2"
-  // simpleHover = " hover:bg-orange-800 hover:text-orange-100"
-  // and then the Simple button could have
-  // className={buttonStyle + simpleHover + simpleActive}
-  // Not sure if that would be better/more readable
   const simpleActive =
     typeFilter === 'simple'
       ? ' bg-orange-800 text-orange-100'
@@ -75,28 +69,19 @@ function Vans() {
       <h1 className="py-5 text-3xl font-bold">Explore our van options</h1>
       <nav className="flex items-center gap-7 py-5 font-medium text-neutral-600">
         <button
-          className={
-            'rounded-md px-6 py-2 hover:bg-orange-800 hover:text-orange-100' +
-            simpleActive
-          }
+          className={button + simpleActive + ' hover:bg-orange-800'}
           onClick={() => setSearchParams({ type: 'simple' })}
         >
           Simple
         </button>
         <button
-          className={
-            'rounded-md px-6 py-2 hover:bg-dark hover:text-orange-100' +
-            luxuryActive
-          }
+          className={button + luxuryActive + ' hover:bg-dark'}
           onClick={() => setSearchParams({ type: 'luxury' })}
         >
           Luxury
         </button>
         <button
-          className={
-            'rounded-md px-6 py-2 hover:bg-green-800 hover:text-orange-100' +
-            ruggedActive
-          }
+          className={button + ruggedActive + ' hover:bg-green-800'}
           onClick={() => setSearchParams({ type: 'rugged' })}
         >
           Rugged
