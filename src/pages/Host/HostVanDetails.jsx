@@ -8,6 +8,11 @@ export function loader({ params }) {
 function HostVanDetails() {
   const van = useLoaderData()
 
+  const navLinkStyle = ({ isActive }) =>
+    isActive
+      ? 'font-bold text-neutral-950 underline'
+      : 'hover:text-neutral-800 hover:underline'
+
   return (
     <div id="host-van-details" className="max-w-2xl pb-12">
       <Link
@@ -42,35 +47,13 @@ function HostVanDetails() {
           </div>
         </div>
         <nav className="flex gap-7 py-4 font-medium text-neutral-600">
-          <NavLink
-            className={({ isActive }) =>
-              isActive
-                ? 'font-bold text-neutral-950 underline'
-                : 'hover:text-neutral-800 hover:underline'
-            }
-            to="."
-            end
-          >
+          <NavLink className={navLinkStyle} to="." end>
             Details
           </NavLink>
-          <NavLink
-            className={({ isActive }) =>
-              isActive
-                ? 'font-bold text-neutral-950 underline'
-                : 'hover:text-neutral-800 hover:underline'
-            }
-            to="photos"
-          >
+          <NavLink className={navLinkStyle} to="photos">
             Photos
           </NavLink>
-          <NavLink
-            className={({ isActive }) =>
-              isActive
-                ? 'font-bold text-neutral-950 underline'
-                : 'hover:text-neutral-800 hover:underline'
-            }
-            to="pricing"
-          >
+          <NavLink className={navLinkStyle} to="pricing">
             Pricing
           </NavLink>
         </nav>
