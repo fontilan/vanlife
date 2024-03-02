@@ -52,9 +52,9 @@ function Vans() {
     </div>
   ))
 
-  // Conditional styling of the buttons, based on the value of the typeFilter. Why was this problematic? In TailwindCSS you cannot add the same property (bg-...) but with a different value (bg-green) so that it will overwrite the previous one (bg-orange). Well actualy you can, but... Tailwind applies those classes in alphabetical order (!) so bg-green won't overwrite bg-orange, but it WILL overwrite bg-dark for example.
-  const button = 'rounded-md px-6 py-2  hover:text-orange-100'
+  const button = 'rounded-md px-6 py-2 hover:text-orange-100'
 
+  // Conditional styling of the buttons, based on the value of the typeFilter. Why was this problematic? In TailwindCSS you cannot add the same property (bg-...) but with a different value (bg-green) so that it will overwrite the previous one (bg-orange). Well actualy you can, but... Tailwind applies those classes in alphabetical order (!) so bg-green won't overwrite bg-orange, but it WILL overwrite bg-dark for example.
   const simpleActive =
     typeFilter === 'simple'
       ? ' bg-orange-800 text-orange-100'
