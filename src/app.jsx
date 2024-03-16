@@ -23,6 +23,7 @@ import Layout from './components/Layout'
 import HostLayout from './components/HostLayout'
 import NotFound from './pages/NotFound'
 import Error from './components/Error'
+import { requireAuth } from './utils'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -39,9 +40,7 @@ const router = createBrowserRouter(
         <Route
           index
           element={<Dashboard />}
-          loader={async () => {
-            return null
-          }}
+          loader={async () => await requireAuth()}
         />
         <Route
           path="income"
