@@ -7,7 +7,7 @@ export async function loader() {
   return getHostVans()
 }
 
-export function HostVans() {
+export default function HostVans() {
   const hostVanData = useLoaderData()
 
   const hostVansList = hostVanData.map((van) => (
