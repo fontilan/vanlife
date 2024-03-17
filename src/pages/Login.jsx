@@ -1,4 +1,9 @@
 import { useState } from 'react'
+import { useLoaderData } from 'react-router-dom'
+
+export function loader({ request }) {
+  return new URL(request.url).searchParams.get('message')
+}
 
 function Login() {
   const [loginFormData, setLoginFormData] = useState({
@@ -18,11 +23,14 @@ function Login() {
     }))
   }
 
+  const message = useLoaderData()
+
   return (
     <div className="mx-auto max-w-md self-center p-5 py-4">
       <h1 className="text-center text-3xl font-bold">
         Sign in to your account
       </h1>
+      {message ?? <h2>{message}</h2>}
       <form className="mt-8" onSubmit={handleSubmit}>
         <input
           className="w-full rounded-t-md border border-neutral-50 p-3 text-dark"

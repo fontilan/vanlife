@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom'
 import About from './pages/About'
 import Home from './pages/Home'
-import Login from './pages/Login'
+import Login, { loader as loginLoader } from './pages/Login'
 import Vans, { loader as vansLoader } from './pages/Vans/Vans'
 import VanDetails, { loader as vanDetailsLoader } from './pages/Vans/VanDetails'
 import Dashboard from './pages/Host/Dashboard'
@@ -75,7 +75,7 @@ const router = createBrowserRouter(
           loader={async () => await requireAuth()}
         />
       </Route>
-      <Route path="login" element={<Login />} />
+      <Route path="login" element={<Login />} loader={loginLoader} />
       <Route path="*" element={<NotFound />} />
     </Route>,
   ),
